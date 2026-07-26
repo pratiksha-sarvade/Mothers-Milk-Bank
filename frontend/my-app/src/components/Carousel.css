@@ -1,0 +1,347 @@
+/* Global styles for body and headings */
+body {
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+h1, h5 {
+  color: #2c3e50;
+}
+
+/* Carousel Section */
+.carousel-img {
+  height: 85vh;
+  object-fit: cover;
+  filter: brightness(70%);
+  transition: filter 0.5s ease-in-out;
+}
+
+.carousel-img:hover {
+  filter: brightness(70%);
+}
+
+.carousel-caption {
+  top: 25%;
+  bottom: auto;
+  left: 5%;
+  right: auto;
+  transform: none;
+  max-width: 700px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Button Styles */
+.btn {
+  transition: all 0.3s ease;
+  font-weight: bold;
+}
+
+.btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px #004085(0, 0, 0, 0.2);
+}
+
+.btn.btn-orange {
+  background-color: #f15a29;
+  color:#f8f9fa(25, 4, 121);
+  border-color: #f15a29;
+}
+
+.btn.btn-cyan {
+  background-color: #00bcd4;
+  color:#f8f9fa;
+  border-color: #00bcd4;
+}
+
+.btn.btn-yellow {
+  background-color: #fbc02d;
+  color: white;
+  border-color: #fbc02d;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #b30000;
+  border-color: #004085;
+}
+
+/* Utility class for text color */
+.text-light-grey-transparent {
+  color: rgba(211, 211, 211, 0.8);
+}
+
+/* Cards Section */
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+.card-text {
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Mission & Impact Section */
+.ekit-heading--title {
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+  color: #2c3e50;
+}
+
+.ekit-heading--title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: #f15a29;
+  border-radius: 2px;
+}
+
+.lead {
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  font-size: 1.15rem;
+  color: #666;
+  line-height: 1.8;
+}
+
+/* Impact Icons Section */
+.d-flex.justify-content-around > div {
+  flex-basis: 22%;
+  min-width: 150px;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.d-flex.justify-content-around > div:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-3px);
+}
+
+.d-flex.justify-content-around img {
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease;
+}
+
+.d-flex.justify-content-around img:hover {
+  transform: scale(1.05);
+}
+
+.d-flex.justify-content-around h3 {
+  color: #f15a29;
+  font-size: 2.2rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.d-flex.justify-content-around p {
+  font-size: 0.95rem;
+  color: #777;
+}
+
+/* --- Custom Styles for Testimonials Section (react-slick) --- */
+
+/* Wrapper to help with arrow positioning and general layout */
+.slick-slider-container {
+  padding: 0 40px; /* Add padding to make space for arrows outside the carousel cards */
+  position: relative; /* Needed for absolute positioning of arrows */
+}
+
+/* Ensures content inside slide takes full height and centers the card */
+.slick-slide > div {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 10px; /* Add horizontal padding to create space between cards */
+  box-sizing: border-box; /* Include padding in element's total width */
+}
+
+/* Styles for the testimonial card itself, inside the slick-slide */
+.testimonial-slick-card {
+  margin: 0 10px; /* Use margin on the card itself for spacing */
+  height: auto; /* Allow card height to adjust to content */
+  min-height: 350px; /* Ensure consistent height for all cards for better alignment */
+  display: flex; /* Make it a flex container to center content */
+  flex-direction: column;
+  justify-content: space-between; /* Distribute space vertically */
+  align-items: center; /* Center content horizontally */
+  padding: 2rem !important; /* Adjust padding as needed */
+  text-align: center;
+}
+
+/* Apply transition to all slides for smooth effects */
+.slick-slide .testimonial-slick-card {
+  transition: all 0.5s ease-in-out;
+}
+
+/* Styles for non-central (side) slides */
+.slick-slide:not(.slick-center) .testimonial-slick-card {
+  opacity: 0.4; /* Stronger dimming */
+  filter: blur(4px); /* Stronger blur */
+  transform: scale(0.85); /* Slightly more scaling down */
+  pointer-events: none; /* Prevent interaction with blurred slides */
+}
+
+/* Styles for the central (active) slide */
+.slick-center .testimonial-slick-card {
+  opacity: 1;
+  filter: blur(0);
+  transform: scale(1);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Prominent shadow */
+}
+
+/* Adjustments for slick dots (indicators) */
+.slick-dots {
+  bottom: -40px;
+  list-style: none; /* Remove default list style */
+  display: flex !important; /* Ensure it's a flex container */
+  justify-content: center; /* Center dots */
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Ensure dots span full width for centering */
+}
+
+.slick-dots li {
+  margin: 0 5px; /* Spacing between dots */
+}
+
+.slick-dots li button {
+  width: 12px; /* Make dots circular */
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ccc; /* Inactive dot color */
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 0; /* Hide default button text */
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.slick-dots li.slick-active button {
+  background-color: #007bff; /* Active dot color */
+}
+
+/* Adjustments for slick arrows (navigation) */
+.slick-prev,
+.slick-next {
+  z-index: 1; /* Ensure arrows are above cards */
+  width: 40px; /* Adjust width */
+  height: 40px; /* Adjust height */
+  display: flex !important; /* Make it a flex container */
+  align-items: center; /* Center icon vertically */
+  justify-content: center; /* Center icon horizontally */
+}
+
+.slick-prev:before,
+.slick-next:before {
+  font-family: 'slick'; /* Use slick's font for arrows */
+  font-size: 40px; /* Increase arrow size */
+  line-height: 1;
+  opacity: 0.75;
+  color: #007bff; /* Arrow color */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.slick-prev {
+  left: 0px; /* Position arrow to the far left of the container, inside padding */
+}
+
+.slick-next {
+  right: 0px; /* Position arrow to the far right of the container, inside padding */
+}
+
+/* Hide default arrows text */
+.slick-prev span,
+.slick-next span {
+  display: none;
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
+  .slick-slider-container {
+    padding: 0 20px; /* Less padding for arrows on smaller desktops */
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-caption h1 {
+    font-size: 2rem !important;
+  }
+
+  .d-flex.justify-content-around > div {
+    flex-basis: 45%;
+    margin-bottom: 1rem;
+  }
+
+  /* Responsive adjustments for slick arrows on tablets */
+  .slick-prev {
+    left: 0px; /* Move arrows closer to the edge */
+  }
+  .slick-next {
+    right: 0px; /* Move arrows closer to the edge */
+  }
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 24px; /* Smaller arrows */
+  }
+
+  .slick-slider-container {
+    padding: 0 10px; /* Reduce padding on smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-caption {
+    display: none !important;
+  }
+
+  .d-flex.justify-content-around > div {
+    flex-basis: 90%;
+  }
+
+  .ekit-heading--title {
+    font-size: 2rem;
+  }
+
+  /* Adjust centerPadding for very small screens */
+  .slick-slide > div {
+    padding: 0 5px; /* Further reduce padding between cards */
+  }
+}

@@ -1,0 +1,13 @@
+/*
+ * This class ensures the footer is always at the bottom of the page,
+ * even when there is little content.
+ */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex-grow: 1;
+}

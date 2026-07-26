@@ -1,0 +1,52 @@
+/* --- Reusable Styles for All Nav Links --- */
+
+.nav-link {
+    /* Use the color from your code */
+    color: #2C5282; 
+    font-weight: 500;
+    text-transform: capitalize;
+    text-decoration: none; /* Removes the default underline */
+    padding-bottom: 5px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* --- Hover Effect --- */
+
+/* The hover color from your code */
+.nav-link:hover {
+    color: #4a1435 !important;
+}
+
+/* Create the underline pseudo-element */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: #4a1435; /* Use the hover color for the underline */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Animate the underline to slide out from the center on hover */
+.nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+
+/* --- Active Link Styles --- */
+
+/* Styles for the currently active link */
+.nav-link.active {
+    font-weight: bold;
+    color: #4a1435; /* Set the active link color to the hover color */
+}
+
+/* Ensure the active link's underline is always visible */
+.nav-link.active::after {
+    width: 100%;
+    left: 0;
+}
